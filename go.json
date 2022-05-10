@@ -1,0 +1,79 @@
+{
+	"Start": {
+		"prefix": "start",
+		"body": [
+			"package main",
+			"",
+			"func main() {",
+			"",
+			"}"
+		],
+		"description": "Start"
+	},
+	"MyFunction": {
+		"prefix": "func",
+		"body": [
+			"func ${1:functionName}(${2:x, y} ${3:int}) ${4:int}{",
+			"  $5",
+			"}"
+		],
+		"description": "Function"
+	},
+	"MyFunctionErr": {
+		"prefix": "funcErr",
+		"body": [
+			"func ${1:functionName}(${2:x, y} ${3:int}) (${4:int}, ${5:error}}){",
+			"  $6",
+			"}"
+		],
+		"description": "FunctionErr"
+	},
+	"While": {
+		"prefix": "while",
+		"body": [
+			"for ${1:i} ${2:<=} ${3:3} {",
+			"  $4",
+			"}"
+		],
+		"description": "While"
+	},
+	"WhileTrue": {
+		"prefix": "whileTrue",
+		"body": [
+			"for {",
+			"  $1",
+			"}"
+		],
+		"description": "WhileTrue"
+	},
+	"forChan": {
+		"prefix": "forChan",
+		"body": [
+			"for {",
+			"    ${1:value}, ${2:opened} := <-${3:ch}",
+			"    if !${2:opened} {",
+			"        break",
+			"    }",
+			"    ${4:fmt.Println(${1:value})}",
+			"}"
+		],
+		"description": "forChan"
+	},
+	"Print": {
+		"prefix": "Print",
+		"body": [
+			"fmt.${1|Print,Println|}($2)"
+		],
+		"description": "Print"
+	},
+	"try": {
+		"prefix": "try",
+		"body": [
+			"${1:result}, ${2:err} := ${3:func}($4)",
+			"if ${2:err} != nil {",
+			"  $5",
+			"}"
+		],
+		"description": "try"
+	}
+}

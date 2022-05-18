@@ -16,9 +16,7 @@ type Robot struct {
 const mapSize = 12
 
 type GameMapStruct struct {
-	field   [mapSize][mapSize]string
-	finishX int
-	finishY int
+	field [mapSize][mapSize]string
 }
 
 func (gameMap *GameMapStruct) loadMap1() {
@@ -35,8 +33,6 @@ func (gameMap *GameMapStruct) loadMap1() {
 		{"☒", " ", "*", " ", "*", "*", " ", "*", "*", "*", " ", "☒"},
 		{"☒", " ", "*", " ", " ", " ", " ", " ", " ", " ", " ", "☒"},
 		{"☒", "☒", "☒", "☒", "☒", "☒", "☒", "☒", "☒", "☒", "☒", "☒"}}
-	gameMap.finishX = 10
-	gameMap.finishY = 6
 }
 
 func clearConsole() {
@@ -103,7 +99,7 @@ func main() {
 		if char == 'f' {
 			Paint()
 		}
-		if robot.x == GameMap.finishX && robot.y == GameMap.finishY {
+		if oldChar == "🍨" {
 			fmt.Printf("Victory!")
 			return
 		}
